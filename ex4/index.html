@@ -12,20 +12,17 @@
 </html>
 
 <script>
-
-     let a=1, b=1, count=0;
-     
-     let sum=a+b;
-
-     console.log(a);
-     console.log(b);
-     
-     while (count < 18) {
-          console.log(sum);
+     var a=0, b=1, sum;
+     sum = a + b;
+     for(; sum<100000;) {
           a=b;
           b=sum;
-          sum=a+b;
-          count++
+          sum=a+b
+          if (a%5==0) {
+               break
+          }
      }
+
+     console.log(a);
      
 </script>
