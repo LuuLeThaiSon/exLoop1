@@ -9,26 +9,37 @@
 <body>
      
      <button onclick="guessGame()">Play</button>
+     <p id="text"></p>
 
 </body>
 </html>
 
 <script>
 
-     var rdNumber = Math.floor(Math.random(1)*11)
-
+    
      function guessGame() {
-          var guessNum = +prompt("Nhap so tu 1-10: ")
+     
+          var rdNumber = Math.floor(Math.random(1)*11)
+          let count=0;
+          console.log(rdNumber);
 
-          for (let i=0; i<3; i++) {
-               if (guessGame==rdNumber) {
+          while (count<=3) {
+               var guessNum = +prompt("Nhap so tu 1-10: ")
+
+               if (guessNum==rdNumber) {
                     document.write("perfect")
-               } else {
-                    guessGame = +prompt("Nhap lai:")
-               }
-          }
+                    break
+               } 
 
-          document.write("lose")
+               count++
+
+               if (count==3) {
+                    document.write("sorry")
+                    break
+               }
+               
+          }
+           
      }
 
 </script>
